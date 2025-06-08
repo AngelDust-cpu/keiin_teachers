@@ -1,0 +1,7 @@
+services:
+  - type: web
+    name: keiin_teachers
+    runtime: python
+    buildCommand: pip install -r requirements.txt
+    startCommand: gunicorn keiin_teachers.wsgi:application
+    plan: free
