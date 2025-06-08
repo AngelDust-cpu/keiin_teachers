@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <title>Преподаватели</title>
+  <link rel="stylesheet" href="{% static 'style.css' %}">
+</head>
+<body>
+  <header>
+    <h1>Наши преподаватели</h1>
+  </header>
+
+  <main class="teacher-list">
+    {% for i in teach %}
+    <a href="{% url 'info' slug=i.slug %}" class="teacher-card">
+      <img src="{{i.img.url}}" alt="Фото преподавателя">
+      <div>
+        <h2>{{ i.bio }}</h2>
+        <p>{{ i.couple }}</p>
+      </div>
+    </a>
+    {% endfor %}
+  </main>
+</body>
+</html>

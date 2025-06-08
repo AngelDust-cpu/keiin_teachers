@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <title>Иван Иванов — Преподаватель</title>
+  <link rel="stylesheet" href="{% static 'style.css' %}">
+</head>
+<body>
+  <header>
+    <h1>{{ teacher.bio }}</h1>
+  </header>
+  <main class="teacher-detail">
+    <img src="{{ teacher.img.url }}" alt="{{ teacher.bio }}" class="teacher-img">
+    <div class="info">
+      <h2>{{ teacher.couple }}</h2>
+      <p>опыт: {{ teacher.exp }}</p>
+      <p>{{ teacher.description }}</p>
+      <p><a href="{% url 'home' %}">← Назад к списку</a></p>
+    </div>
+  </main>
+</body>
+</html>
